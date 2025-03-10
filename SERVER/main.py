@@ -1,7 +1,8 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv()  # Load environment variables
+# Load .env file explicitly from SERVER directory
+dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
+load_dotenv(dotenv_path=dotenv_path)
 
-print("DATABASE_URL:", os.getenv("DATABASE_URL"))
-  # Debugging: Check if it loads
+print("DATABASE_URL:", os.getenv("DATABASE_URL"))  # Debug
